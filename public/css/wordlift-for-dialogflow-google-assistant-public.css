@@ -1,0 +1,337 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('fonts/Gotham Bold Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.wldfga-container {
+	width: auto;
+	min-width: 500px; /* min screen size */
+	display: inline-block;
+}
+
+.wldfga-conversation-area {
+	font-family: Gotham;
+	font-size: 14px;
+	width: auto;
+	max-width: 100%;
+	max-height: 420px;
+	overflow: auto;
+	padding-right: 20px; /* FIXME only add padding if vertical scrollbar is added*/
+	padding-left: 20px; /* FIXME only add padding if vertical scrollbar is added*/
+}
+.wldfga-conversation-bubble-container + .wldfga-conversation-bubble-container {
+	margin-top: 10px;
+}
+.wldfga-conversation-bubble {
+	padding: 10px 15px;
+	display: inline-block;
+	border-radius: 3px;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+	max-width: 80%;
+}
+.wldfga-conversation-response {
+    background-color: #1f4c73;
+	color: #fff;
+	position: relative;
+	line-height: 1.3;
+	font-size: 13px;
+}
+
+.wldfga-conversation-response:after {
+	position: absolute;
+    right: -5px;
+    background-color: #1f4c73;
+	color: #fff;
+    content: ' ';
+    display: block;
+    top: 30%;
+    height: 10px;
+    width: 10px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+}
+.wldfga-conversation-request:before {
+	position: absolute;
+    left: -5px;
+    content: ' ';
+    display: block;
+    top: 30%;
+    height: 10px;
+    width: 10px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    color: #323232;
+    color: #FF8401;
+    background: #fff;
+    z-index: -1;
+}
+.wldfga-image-response {
+	padding: 9px 6px 6px 6px;
+}
+.wldfga-quick-reply {
+	display: block;
+	margin-top: 6px;
+}
+.wldfga-image-response img {
+	max-width: 300px;
+	max-height: 200px;
+	display: inline-block;
+}
+.wldfga-conversation-request {
+	background-color: #1f4c73;
+	color: #fff;
+	position: relative;
+}
+.wldfga-input-area {
+	margin-top: 10px;
+	clear: both;
+	display: block;
+}
+input[type="text"].wldfga-text {
+    max-width: 100%;
+    min-width: 100%;
+    padding: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #0F79FC;
+    height: 50px;
+    line-height: 40px;
+    border-left: 0;
+    border-right: 0;
+    font-family: Gotham;
+}
+}
+.wldfga-debug {
+	margin-top: 10px;
+}
+.wldfga-debug-data {
+	max-width: 100%;
+}
+.wldfga-conversation-bubble-container-response {
+	text-align: right;
+}
+
+.wldfga-datetime {
+	margin-top: 2px;
+	font-style: italic;
+	font-color: #888;
+}
+
+
+/* Overlay */
+.wldfga-content-overlay {
+	font-family: Gotham;
+	position: fixed;
+	bottom: 0%;
+	right: 5%;
+	width: 350px;
+	display: block;
+	box-shadow: 0 0 3px rgba(0,0,0,.3);
+	z-index: 999;
+	background-color: #fff;
+	text-align: left;
+}
+.wldfga-content-overlay-header {
+	height: 50px;
+	font-weight: 600;
+	line-height: 50px;
+	font-size: 22px;
+	padding-left: 10px;
+	padding-right: 10px;
+	cursor: pointer;
+	display: flex;
+    align-items: center;
+    justify-content: space-between;
+    vertical-align: middle;
+}
+.wldfga-content-overlay-container {
+	display: block;
+}
+.wldfga-content-overlay-container .wldfga-container {
+	width: 100% !important;
+	min-width: auto !important;
+	display: block;
+	border: 1px solid #0F79FC;
+}
+.wldfga-content-overlay-container .wldfga-container .wldfga-conversation-area {
+	max-height: inherit;
+	display: block;
+	height: 380px;
+	padding-top: 10px;
+}
+.wldfga-content-overlay-container .wldfga-image-response img {
+	max-width: 100%;
+}
+
+.wldfga-content-overlay-container .wldfga-input-area {
+	padding-top: 10px;
+	margin-top: 0px;
+}
+
+.fa-chevron-up {
+	transition: transform .3s;
+}
+
+.wldfga-toggle-open .fa-chevron-up {
+	transform: rotate(180deg);
+}
+
+.wldfga-conversation-bubble,
+.wldfga-conversation-bubble:before {
+	opacity: .8;
+}
+.wldfga-is-active {
+	opacity: 1.0;
+	filter: alpha(opacity=100); /* For IE8 and earlier */
+}
+.wldfga-content-overlay-header .wldfga-icon-toggle-down, .wldfga-content-overlay-powered-by, .wldfga-content-overlay-container {
+	display: none;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+	.wldfga-container {
+		min-width: 100%;
+		width: 100%;
+		max-height: 320px;
+	}
+	.wldfga-image-response img {
+		max-width: 100%;
+	}
+	.wldfga-content-overlay {
+		min-width: 100%;
+		width: 100%;
+		max-height: 100%;
+		right: auto;
+	}
+	.wldfga-content-overlay-container {
+		font-size: 100%;
+	}
+	.wldfga-toggle-open {
+		min-height: 100%;
+	}
+	.wldfga-content-overlay-container .wldfga-container {
+		display: block;
+		max-height: 100%;
+		position: fixed;
+	}
+	.wldfga-content-overlay-container .wldfga-container .wldfga-conversation-area {
+		position: relative;
+		max-height: 80%;
+	}
+	.wldfga-content-overlay-container .wldfga-container .wldfga-input-area {
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width : 320px) and (max-width : 480px) and (orientation: landscape) {
+	.wldfga-content-overlay-container .wldfga-container .wldfga-conversation-area {
+		max-height: 170px;
+	}
+}
+@media only screen and (min-width : 320px) and (max-width : 480px) and (orientation: portrait) {
+	.wldfga-content-overlay-container .wldfga-container .wldfga-conversation-area {
+		max-height: 330px;
+	}
+}
+
+
+/* Loader */
+@keyframes blink {
+	50% {
+		color: transparent;
+	}
+}
+.wldfga-conversation-area .wldfga-loading {
+	display: block;
+	padding: 6px 9px;
+	margin-top: 10px;
+	text-align: center;
+	vertical-align: center;
+}
+.wldfga-conversation-area .wldfga-icon-loading-dot {
+	animation: 1s blink infinite;
+	font-size: 1em;
+	display: clear;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+.wldfga-conversation-area .wldfga-icon-loading-dot:nth-child(2) {
+	animation-delay: 750ms;
+}
+.wldfga-conversation-area .wldfga-icon-loading-dot:nth-child(3) {
+	animation-delay: 1500ms;
+}
+
+
+.card-title {
+	text-align: center;
+	padding: 5px 0 8px;
+}
+
+.card-description {
+	text-align: center;
+	padding-top: 10px;
+}
+.card-link {
+	text-align: center;
+	display: block;
+	margin: auto;
+	color: #fff;
+    text-decoration: underline;	
+}
+
+.card-link:after {
+	content:"\f08e";
+    font-family: FontAwesome;
+    font-size: 10px;
+    padding-left: 6px;
+}
+
+.card-options {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+
+	justify-content: space-around;
+}
+
+.card-options input[type="button"] { 
+	display: block;
+	padding: 6px 10px;
+	border-radius: 5px;
+	background: #0F79FC;
+	border: 1px solid #fff;
+	color: #fff;
+	font-family: Gotham;
+}
+
+.list-options {
+	text-align: center;
+	border: 1px solid #0F79FC;
+	list-style-position: inside
+}
+
+.list-options li {
+	padding: 7px 0;
+	border-bottom: 1px solid #0F79FC;
+}
+
+
+.list-options li:last-child {
+	border: none;
+}
