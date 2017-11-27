@@ -53,7 +53,7 @@ foreach ( $options as $option ) {
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
 <div class="wldfga-content-overlay wldfga-toggle-closed">
 	<div class="wldfga-content-overlay-header">
-		<span class="wldfga-content-overlay-header-text">Talk to our bot</span>
+		<span class="wldfga-content-overlay-header-text">Talk to Jason Lee</span>
 		<i class="fa fa-chevron-up" aria-hidden="true"></i>
 	</div>
 

@@ -102,19 +102,37 @@ class Wordlift_For_Dialogflow_Google_Assistant_Public {
 			$this->plugin_name,
 			'options',
 			array(
-				'access_token' => get_option( 'wordlif_for_dialogflow_google_assistant_myc_access_token' ),
+				'access_token' => get_option( 'wordlif_for_dialogflow_google_assistant_access_token' ),
 				'session_id'   => $this->get_session(),
 				'url'          => 'https://api.dialogflow.com/v1/query?v=20170712',
 			)
 		);
 	}
 
+	public function get_chatbot_pages()	{
+		$pages = get_option( 'wordlif_for_dialogflow_google_assistant_show_on_page_id' );
+
+		if ( ! empty( $pages ) ) {
+			return explode( ',', $pages );
+		}
+	}
+
 	/**
 	 * Render the chatbox.
 	 */
 	public function render() {
-		// render the form template
-		include_once( dirname( __FILE__ ) . '/partials/wordlift-for-dialogflow-google-assistant-public-display.php' );
+		$chatbot_pages = $this->get_chatbot_pages();
+
+		if (
+			empty( $chatbot_pages ) ||
+			(
+				! empty( $chatbot_pages ) &&
+				in_array( get_the_ID(), $chatbot_pages )
+			)
+		) {
+			// render the form template
+			include_once( dirname( __FILE__ ) . '/partials/wordlift-for-dialogflow-google-assistant-public-display.php' );
+		}
 	}
 
 	public function get_session() {

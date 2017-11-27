@@ -74,50 +74,54 @@ class Wordlift_For_Dialogflow_Google_Assistant_Form {
 	public function get_field_data() {
 		return array(
 			'access_token' => array(
-					'title' 	=> __( 'Access Token', 'wordlift-for-dialogflow-google-assistant' ),
-					'type' => 'text',
+					'title' => __( 'Access Token', 'wordlift-for-dialogflow-google-assistant' ),
+					'type'  => 'text',
 			),
 			'request_background_color' => array(
-					'title' 	=> __( 'Request Background Color', 'wordlift-for-dialogflow-google-assistant' ),
-					'type' => 'text',
+					'title'   => __( 'Request Background Color', 'wordlift-for-dialogflow-google-assistant' ),
+					'type'    => 'text',
 					'classes' => array(
-						'color-picker'
+						'color-picker',
 					),
 			),
 			'request_text_color' => array(
-					'title' 	=> __( 'Request Text Color', 'wordlift-for-dialogflow-google-assistant' ),
-					'type' => 'text',
+					'title'   => __( 'Request Text Color', 'wordlift-for-dialogflow-google-assistant' ),
+					'type'    => 'text',
 					'classes' => array(
-						'color-picker'
+						'color-picker',
 					),
 			),
 			'response_background_color' => array(
-					'title' 	=> __( 'Response Background Color', 'wordlift-for-dialogflow-google-assistant' ),
-					'type' => 'text',
+					'title'   => __( 'Response Background Color', 'wordlift-for-dialogflow-google-assistant' ),
+					'type'    => 'text',
 					'classes' => array(
-						'color-picker'
+						'color-picker',
 					),
 			),
 			'response_text_color' => array(
-					'title' 	=> __( 'Response Text Color', 'wordlift-for-dialogflow-google-assistant' ),
-					'type' => 'text',
+					'title'   => __( 'Response Text Color', 'wordlift-for-dialogflow-google-assistant' ),
+					'type'    => 'text',
 					'classes' => array(
-						'color-picker'
+						'color-picker',
 					),
 			),
 			'overlay_header_background_color' => array(
-					'title' 	=> __( 'Overlay Header Background Color', 'wordlift-for-dialogflow-google-assistant' ),
-					'type' => 'text',
+					'title'   => __( 'Overlay Header Background Color', 'wordlift-for-dialogflow-google-assistant' ),
+					'type'    => 'text',
 					'classes' => array(
-						'color-picker'
+						'color-picker',
 					),
 			),
 			'overlay_header_text_color' => array(
-					'title' 	=> __( 'Overlay Header Text Color', 'wordlift-for-dialogflow-google-assistant' ),
-					'type' => 'text',
-					'classes' => array(
-						'color-picker'
-					),
+				'title'   => __( 'Overlay Header Text Color', 'wordlift-for-dialogflow-google-assistant' ),
+				'type'    => 'text',
+				'classes' => array(
+					'color-picker',
+				),
+			),
+			'show_on_page_id' => array(
+				'title' => __( 'You can specify on which pages to display the bot by adding page ids here', 'wordlift-for-dialogflow-google-assistant' ),
+				'type'  => 'text',
 			)
 		);
 	}

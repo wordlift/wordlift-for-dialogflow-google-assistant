@@ -94,7 +94,6 @@
 			} ),
 			success : function(response) {
 				prepareResponse(response);
-				console.log(response);
 			},
 			error : function(response) {
 				addMessage( error_message, 'response' );;
@@ -117,7 +116,6 @@
 		}
 
 		var messages = response.result.fulfillment.messages;
-		console.log(messages);
 		// Make other messages unactive.
 		$( '.wldfga-conversation-area .wldfga-conversation-response' ).removeClass( 'wldfga-is-active' );
 
